@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: x-large;
+        }
+        div{
+            font-size: x-large;
+        }
+    </style>
+    <script>
+        class Rectangle {
+            constructor(length, width) {
+                this.length = length;
+                this.width = width;
+            }
+
+            calculateArea() {
+                let area = this.length * this.width;
+                return area.toFixed(2);
+            }
+            calculatePerimeter() {
+                let perimeter = 2 * (this.length * this.width);
+                return perimeter.toFixed(2);
+            }
+        }
+
+        class Circle {
+
+            constructor(radius) {
+                this.radius = radius;
+            }
+
+            calculateArea() {
+                let area = Math.PI * this.radius * this.radius
+                return area.toFixed(2);
+            }
+
+            calculatePerimeter() {
+                let perimeter = 2 * Math.PI * this.radius;
+                return perimeter.toFixed(2);
+            }
+        }
+
+        const circle = new Circle(5);
+        const rectangle = new Rectangle(8, 9);
+
+        document.write(`<div>14. Create a custom object for rectangle and circle. Individual Rectangle objects should be able to store
+        dimension, and have methods to print area and perimeter. Individual Circle objects should be able to
+        store radius, and have methods to print area and circumference. Display dimensions, area and perimeter
+        of rectangle and circle objects. Make use of pre-defined objects</div>`)
+        document.write(`<h1>Rectangle : </h1>`);
+        document.write(`<p>Dimensions : Length = ${(rectangle.length).toFixed(2)} , Width = ${(rectangle.width).toFixed(2)}</p>`);
+        document.write(`<p>Area = ${rectangle.calculateArea()}</p>`);
+        document.write(`<p>Perimeter = ${rectangle.calculatePerimeter()}</p>`);
+
+        document.write(`<h1>Circle : </h1>`);
+        document.write(`<p>Dimension : Radius = ${circle.radius}</p>`);
+        document.write(`<p>Area = ${circle.calculateArea()}</p>`);
+        document.write(`<p>Perimeter = ${circle.calculatePerimeter()}</p>`);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array To List</title>
+    
+    <style>
+        div {
+            border: 2px solid black;
+            padding: 30px;
+        }
+
+        body {
+            font-size: x-large;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 30px;
+        }
+
+        input {
+            font-size: large;
+        }
+
+        button {
+            margin-top: 10px;
+            font-style: normal;
+        }
+
+       
+
+        p {
+            margin-top: 5px;
+        }
+    </style>
+
+    <script>
+        // function show(){
+        // var members=["Harsh","Akash","Mayank","Gogoi","Murari","Hari"]
+        // var listElement=document.getElementById("list")
+        // members.forEach(function(name){
+        //     listItem=document.createElement("li");
+        //     listItem.textContent=name;
+        //     listElement.appendChild(listItem);
+        // })
+        // document.getElementById("show").innerHTML="Array : "+members;
+        
+        // }
+
+        function show(){
+        var members=["Harsh","Akash","Mayank","Gogoi","Murari","Hari"]
+        var listElement=document.getElementById("list")
+        listElement.innerHTML=members.map(function(name){
+            return "<li>"+name+"</li>";
+        }).join('')
+        document.getElementById("show").innerHTML="Array : "+members;
+    }
+    </script>
+
+</head>
+<body>
+    <div style="width: 700px; height: 500px; background: linear-gradient(to right,#B2FEFA, #0ED2F7);">
+
+        <h1 align="center"><u>Members Of My Group are</u></h1>
+        <p>Click the button to display member names in list:</p>
+        <button type="button" id="btnShow" onclick="show()" class="custom-button">Show String</button><br>
+        <p id="show"></p>
+        <ol id="list"></ol>
+
+
+
+       
+    
+</body>
+</html>

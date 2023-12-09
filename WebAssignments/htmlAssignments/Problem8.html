@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 align="center">Online feedback Form</h1>
+
+    <p>
+      People who have filled form: <br />
+      Sachit,rohan,vijays
+    </p>
+    <h1 align="center">Decathlon</h1>
+    <p>
+      This feedback form is aimed to collect problems or difficulties faced by
+      customer while purchasing products from our store <br/>
+    </p>
+    <p>
+        Instructions:
+        Enter your email, username, location, phone,type of problem, description of the problem <br/>
+    </p>
+    <form action="">
+        <table width="50%">
+            <tr>
+                <td>
+                    <label>email </label>
+                </td>
+                    <td><input type="email" id="em" name="em" placeholder="enter email" required/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>username </label>
+                </td>
+                    <td><input type="text" id="username" name="username" placeholder="enter username" required/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Location </label>
+                </td>
+                    <td><input type="text" id="location" name="location" placeholder="enter location" required/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Phone </label>
+                </td>
+                    <td><input type="tel" id="phone" name="phone" placeholder="enter phone number" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Type of problem </label>
+                </td>
+                <td>
+                <input type="radio" id="problem1" name="problem" value="technical"/><label for="problem1">technical</label><br/>
+                <input type="radio" id="problem2" name="problem" value="product not available" /><label for="problem2">product not available</label><br/>
+                <input type="radio" id="problem3" name="problem" value="missing"/><label for="problem3">missing information about product</label><br/>
+                <input type="radio" id="problem4" name="problem" value="other" /><label for="problem4">Other</label> 
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Description of the problem </label>
+                </td>
+                <td>
+                    <textarea rows="5" cols="10" name="desc" id="pro" required>
+                        
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label >Do you want to Recive notification from us?</label>
+                </td>
+                <td>
+                    <input type="radio" name="que" id="yes"/>yes
+                    <input type="radio" name="que" id="no"/>no
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2">
+                    <button type="submit" name="submit" id="submit" value="submit">submit</button>
+                    <button type="reset" name="reset" id="reset" value="reset">reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+  </body>
+</html>

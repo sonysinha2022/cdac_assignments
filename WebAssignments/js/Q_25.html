@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+</head>
+<style>
+    p {
+        font-size: x-large;
+      
+    }
+
+    body {
+        font-size: larger;
+        margin: 30px;
+        font-family: serif;
+    }
+
+    div {
+        width: 1000px;
+        height: 600px;
+        border: 2px solid black;
+        background: linear-gradient(to right, cyan, white);
+        padding: 30px;
+        font-size: larger;
+    }
+
+    input {
+        margin-top: 5px;
+    }
+</style>
+
+<script>
+
+    class Order {
+        constructor() {
+            this.OrderID = '';
+            this.CustomerName = '';
+            this.BillingDate = '';
+            this.ShippingDate = '';
+            this.OrderTotal = '';
+        }
+    }
+
+
+    show = () => {
+
+        var id = document.getElementById("custid").value;
+        var name = document.getElementById("custname").value;
+        var billingdate = document.getElementById("billingdate").value;
+        var shippingdate = document.getElementById("shippingdate").value;
+        var ordertotal = document.getElementById("ordertotal").value;
+
+        if (name.length < 5) {
+            document.getElementById("errorcustname").innerHTML = "Cust name must be greater than 5 characters."
+            return;
+        }
+        if (name.length > 5) {
+            document.getElementById("errorcustname").innerHTML = ""
+
+        }
+
+        if (billingdate > shippingdate) {
+            document.getElementById("errorbillingdate").innerHTML = "Billing date must be lesser than shipping date "
+            return;
+        }
+
+        if (name.length > 5) {
+            document.getElementById("errorbillingdate").innerHTML = ""
+
+        }
+
+        var order = new Order();
+        order.OrderID = id,
+            order.CustomerName = name,
+            order.BillingDate = billingdate,
+            order.ShippingDate = shippingdate,
+        order.OrderTotal = ordertotal;
+
+        var displayString =
+            "OrderId : " + order.OrderID + "<br>" +
+            "Customer Name : " + order.CustomerName + "<br>" +
+            "Billing Date : " + order.BillingDate + "<br>" +
+            "Shipping Date : " + order.ShippingDate + "<br>" +
+            "Order Total : " + order.OrderTotal + "<br>";
+
+
+        document.getElementById("showDetails").innerHTML = displayString;
+
+    }
+
+
+
+
+
+    reset = () => {
+
+        document.getElementById("errorid").innerHTML = '';
+        document.getElementById("errorcustname").innerHTML = '';
+        document.getElementById("errorbillingdate").innerHTML = '';
+        document.getElementById("errorshippingdate").innerHTML = '';
+        document.getElementById("errorordertotal").innerHTML = '';
+    }
+
+
+
+</script>
+
+<body>
+    <p>
+        25. Create a HTML page that accepts order details: <br>
+        Following are validations required: <br>
+        • All fields are mandatory <br>
+        • Cust name must be greater than 5 characters. <br>
+        • Billing date must be lesser than shipping date <br>
+        If all goes well, display as follows; <br> On clicking the display button, all form information must be saved
+        into an
+        Order object. The details of this object must be displayed in a new window in a neat tabular fashion(hint : use
+        window.open())
+    </p>
+
+    <div>
+        <form id="myform">
+
+            <label for="custid">Order ID : </label>
+            <input type="number" id="custid" required>
+            <span style="color: red;" id="errorid"></span><br>
+
+            <label for="custname">Customer Name : </label>
+            <input type="text" id="custname" required>
+            <span style="color: red;" id="errorcustname"></span><br>
+
+            <label for="billingdate">Enter Billing Date : </label>
+            <input type="date" id="billingdate" required>
+            <span style="color: red;" id="errorbillingdate"></span><br>
+
+            <label for="shippingdate">Enter Shipping Date : </label>
+            <input type="date" id="shippingdate" required>
+            <span style="color: red;" id="errorshippingdate"></span><br>
+
+            <label for="ordertotal">Order Total : </label>
+            <input type="number" id="ordertotal" required>
+            <span style="color: red;" id="errorordertotal"></span><br>
+
+            <button type="button" class="btn btn-primary" onclick="show()">Submit</button>
+            <button type="reset" class="btn btn-primary" onclick="reset()">Reset</button>
+
+        </form><br>
+        <p id="showDetails"></p>
+    </div>
+
+
+</body>
+
+</html>

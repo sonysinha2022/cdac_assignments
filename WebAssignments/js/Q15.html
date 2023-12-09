@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse and Sort Words</title>
+</head>
+<body>
+
+  <script>
+    const arr = ["apple", "banana", "orange", "grape", "kiwi"];
+
+    const rev = arr.map(word => word.split('').reverse().join(''));
+    const sorted = rev.sort();
+
+    document.write(`Original Array: ${arr}<br>`);
+    document.write(`Reversed and Sorted Array: ${sorted}`);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Calculator</title>
+
+    <style>
+        #out {
+            border: 2px solid black;
+            padding: 30px;
+        }
+
+        body {
+            font-size: x-large;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 30px;
+        }
+
+        input {
+            font-size: large;
+        }
+
+        button {
+            margin-top: 10px;
+            font-style: normal;
+        }
+
+
+
+        p {
+            margin-top: 5px;
+        }
+    </style>
+
+    <script>
+        function calculatePayment(){
+            var amount = parseFloat(document.getElementById("loanAmount").value);
+            var roi = parseFloat(document.getElementById("roi").value);
+            var period = parseFloat(document.getElementById("period").value);
+
+            if(isNaN(amount) || amount>1500000){
+                alert("Please enter a valid loan amount (between 1 and 15 lakhs)!!!")
+                return;
+            }
+
+            if(isNaN(roi) || roi<0){
+                alert("Please enter a valid rate of interest!!!")
+                return;
+            }
+
+            if(isNaN(period) || period<7 || period>15){
+                alert("Please enter a valid loan term (between 7 and 15 years) !!!")
+                return;
+            }
+
+
+            var monthlyInterest=roi/(12*100)
+            var totalPayments=period*12;
+            var numerator=Math.pow(1+monthlyInterest,totalPayments);
+            var monthlyPayment=(amount*monthlyInterest*numerator)/(numerator-1)
+            var totalPayment=monthlyPayment*totalPayments;
+            var interestPayment=totalPayment-amount;
+
+            document.getElementById("monthlyPayment").value=monthlyPayment.toFixed(2);
+            document.getElementById("totalPayment").value=totalPayment.toFixed(2);
+            document.getElementById("interestPayment").value=interestPayment.toFixed(2);
+
+
+            document.getElementById
+
+
+
+
+        }
+        function reset(){
+         
+            document.getElementById("loanAmount").value="";
+            document.getElementById("roi").value="";
+            document.getElementById("period").value="";
+            document.getElementById("monthlyPayment").value=""
+            document.getElementById("totalPayment").value=""
+            document.getElementById("interestPayment").value=""
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <p>23. Problem statement-2 : Payment calculator
+        Create a following web page and calculate Payment Information based on Loan Information. Validate
+        Loan information textfields for numbers and Payment Information textfields should be uneditable. The
+        other constraints are as follows :
+        • Amount of Loan should not be more than 15 lakhs.
+        • Repayment period should be between 7 yrs to 15 yrs.</p>
+    <div id="out" style="width: 700px; height: 500px; background: linear-gradient(to right,#BDC3C7, #2C3E50);">
+
+        <h1>Enter loan information:</h1>
+        <table>
+            <tr>
+                <td> <label for="loanAmount">1)Amount of the loan:</label></td>
+                <td><input type="text" id="loanAmount"></td>
+            </tr>
+
+            <tr>
+                <td><label for="roi">2)Annual percentage rate of interest:</label></td>
+                <td><input type="text" id="roi"></td>
+            </tr>
+
+
+            <tr>
+                <td><label for="period">3)Repayment period in years:</label></td>
+                <td><input type="text" id="period"><br></td>
+            </tr>
+
+
+        </table>
+
+        <button type="button" id="btnShow" onclick="calculatePayment()" class="custom-button">Compute</button>
+        <button type="button" id="reset" onclick="reset()" class="custom-button">Reset</button><br>
+
+        <h1>Payment Information :</h1>
+       
+        <table>
+            <tr>
+                <td> <label for="monthlyPayment">4)Your monthly payment will be:</label></td>
+                <td><input type="text" id="monthlyPayment" readonly></td>
+            </tr>
+
+            <tr>
+                <td><label for="totalPayment">5)Your total payment will be:</label></td>
+                <td><input type="text" id="totalPayment" readonly></td>
+            </tr>
+
+
+            <tr>
+                <td><label for="interestPayment">6)Your total interest payment will be:</label></td>
+                <td><input type="text" id="interestPayment" readonly><br></td>
+            </tr>
+
+
+        </table>
+       
+       
+       
+        <p id="show"></p>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

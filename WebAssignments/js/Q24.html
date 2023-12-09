@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <script>
+    function submitLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (validateUsername(username) && validatePassword(password)) {
+        alert("Login successful!");
+      } else {
+        alert("Invalid username or password. Please check the input.");
+      }
+    }
+
+    function validateUsername(username) {
+      return /^[A-Za-z]{6,10}$/.test(username);
+    }
+
+    function validatePassword(password) {
+      return /^(?=.*\d)(?=.*[#]).{8,}$/.test(password);
+    }
+  </script>
+</head>
+<body>
+
+  <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" pattern="[A-Za-z]{6,10}" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" pattern="^(?=.*\d)(?=.*[#]).{8,}$" required>
+
+    <button type="button" onclick="submitLogin()">Login</button>
+  </form>
+
+  
+
+</body>
+</html>

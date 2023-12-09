@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 50px;
+        }
+        p{  
+            
+            font-size: x-large;
+        }
+        div{
+            font-size: x-large;
+            border: 2px solid black;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+        label{
+            
+            margin: 30px;
+        }
+        input{
+            font-size: large;
+            margin: 30px;
+        }
+        button{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: larger;
+            margin: 30px;
+        }
+    </style>
+    <script>
+        clacArea=()=>{
+            let radius=document.getElementById("rad").value;
+            if(isNaN(radius)){
+                alert("Enter integer value!!!");
+            }
+            let area=(Math.PI*radius*radius).toFixed(2);
+            let perimeter=(2*Math.PI*radius).toFixed();
+            document.getElementById("area").innerHTML="Area = "+area+"<br><br>Perimeter = "+perimeter
+            document.getElementById("rad").value="";
+            document.getElementById("rad").focus();
+        }
+    </script>
+</head>
+<body>
+    <p>17. Create a HTML form that accepts radius and displays the area and circumference of a circle. Make use of
+        Math object</p>
+    
+    <div style="width: 700px; height: 500px; background-image: linear-gradient(to bottom right, #FFDB01, #0E197D);">
+        <h1 style="margin-left: 80px;"><u>Calculate Area Of Circle</uu></h1>
+        <label for="radius">Enter radius of circle :</label>
+        <input type="number" id="rad"><br>
+        <button onclick="clacArea()">Calculate Area</button>
+        <p id="area"></p>
+        
+    
+    </div>    
+    
+    <p style="margin-left: 80px;" id="disp"></p>
+</body>
+</html>

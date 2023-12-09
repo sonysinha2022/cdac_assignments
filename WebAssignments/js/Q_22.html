@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array To List</title>
+
+    <style>
+        #out{
+            border: 2px solid black;
+            padding: 30px;
+        }
+
+        body {
+            font-size: x-large;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 30px;
+            color: white;
+        }
+
+        input {
+            font-size: large;
+        }
+
+        button {
+            margin-top: 10px;
+            font-style: normal;
+        }
+
+
+
+        p {
+            margin-top: 5px;
+        }
+    </style>
+
+    <script>
+        function searchDivs(){
+
+            var divs=document.getElementsByTagName("div")
+            for(var i=0;divs.length;i++){
+            var currentDiv=divs[i];
+            var divContent=currentDiv.textContent || currentDiv.innerText;
+            if(divContent.toLowerCase().includes("training")){
+                currentDiv.style.backgroundColor="cyan";
+            }
+        }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="out" style="width: 700px; height: 500px; background: linear-gradient(to right,#000046, #1CB5E0);">
+
+        
+        <p>Searching divs for "training":</p>
+        <div id="div1">div 1 : Training Center</div>
+        <div id="div2">div 2 : Office Space</div>
+        <div id="div3">div 3 : Training Room</div>
+        <div id="div4">div 4 : Meeting Hall</div>
+
+        <button type="button" id="btnShow" onclick="searchDivs()" class="custom-button">Show</button><br>
+        <p id="show"></p>
+        
+
+
+
+
+
+</body>
+
+</html>

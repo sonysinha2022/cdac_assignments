@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count Websites</title>
+</head>
+<body>
+  <script>
+    const websites = [
+      "www.google.com",
+      "www.msn.com",
+      "www.amazon.co.in",
+      "in.answers.yahoo.com",
+      "www.coderanch.com"
+    ];
+
+    const result = websites.filter(site => site.startsWith("www"));
+    const total = result.length;
+
+    document.write(`Total websites starting with "www": ${total}`);
+  </script>
+
+</body>
+</html>

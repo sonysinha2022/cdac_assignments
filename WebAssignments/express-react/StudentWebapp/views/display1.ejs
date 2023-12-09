@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>Stdid</th>
+                <th>Name</th>
+                <th>Dept</th>
+            </tr>
+            <%for(let i=0;i<studata.length;i++){%>
+                <tr>
+                    <th><%=studata[i].sid%></th>
+                    <th><%=studata[i].sname%></th>
+                    <th><%=studata[i].dept%></th>
+                </tr>
+                <%}%>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+    <style>
+        body {
+            margin: 50px;
+        }
+
+        div {
+            border: 2px solid black;
+        }
+
+        p {
+            font-size: x-large;
+        }
+
+        label {
+            font-size: x-large;
+        }
+
+        input {
+            font-size: large;
+        }
+
+        button {
+            font-family : 'Times New Roman', Times, serif;
+            font-size : larger;
+        }
+
+        div {
+            padding: 30px;
+        }
+    </style>
+    <script>
+        function manipulate() {
+            var main = document.getElementById("main").value;
+            var sub = document.getElementById("sub").value;
+            var replaceValue = document.getElementById("replace").value;
+
+            let output="";
+
+            if(document.getElementById("search").checked){
+                if(main.indexOf(sub)!==1){
+                    output=`Substring "${sub}" found at position ${main.indexOf(sub)} in the main string.`
+                }else{
+                    output=`Substring ${sub} not found!!!`
+                }
+            }else if(document.getElementById("upper").checked){
+                output=`Upper String : ${main.toUpperCase()}`
+            }else if(document.getElementById("lower").checked){
+                output=`Lower String : ${main.toLowerCase()}`
+            }else if(document.getElementById("trim").checked){
+                output=`Trimmed : ${main.trim()}`
+            }else if(document.getElementById("concat").checked){
+                output=`Concatenated String : ${main.concat(sub)}`
+            }else if(document.getElementById("replace").checked){
+                output=`Replaced : ${main.replace(sub,replaceValue)}`
+            }
+           
+            document.getElementById("show").innerHTML=output;
+            document.getElementById("main").focus();
+        }
+       
+        function resetForm(){
+            document.getElementById("myform").reset();
+            document.getElementById("show").innerHTML="";
+        }
+    </script>
+</head>
+<body>
+    <p>18. Create the HTML form given below. Use JS to manipulate strings. Display the output below the button
+        <br> • 1st radio button: search the given sub string (second text box) in the main string (first text box)
+        <br> • 2nd & 3rd radio button: convert one of the strings to upper/lower case
+        <br> • 4th radio button: trim spaces around the first string
+        <br> • 5th radio button: concatenate strings in the first and 2nd text boxes
+        <br> • 6th radio button: replace substring with the specified string
+    </p><br>
+
+    <div style="width: 1200px; height: 500px; background: linear-gradient(to right,cyan,white)">
+        <form id="myform">
+        <label for="main">Enter String :</label>
+        <input type="text" id="main"><br><br>
+
+        <label for="sub">Enter Sub-String :</label>
+        <input type="text" id="sub"><br><br>
+
+        <label for="replace">Replace with string :</label>
+        <input type="text" id="replace"><br><br>
+
+        <input type="radio" id="search" name="operation">
+        <label for="search">Search substring in main string</label>
+
+        <input type="radio" id="upper" name="operation">
+        <label for="upper">To Upper Case</label>
+
+        <input type="radio" id="lower" name="operation">
+        <label for="lower">To Lower Case</label>
+
+        <input type="radio" id="trim" name="operation">
+        <label for="trim">Trim Spaces</label>
+
+        <input type="radio" id="concat" name="operation">
+        <label for="concat">Concatenate</label>
+
+        <input type="radio" id="replace" name="operation">
+        <label for="replace">Replace</label><br><br>
+
+        <button type="button" onclick="manipulate()">Submit Query</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+        </form>
+        <p id="show"></p>
+    </div>
+</body>
+</html>

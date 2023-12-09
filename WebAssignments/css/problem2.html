@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #356AA0;
+        }
+        fieldset{
+            border-color: white;
+            color: white;
+            width: 50%;
+            
+        }
+        table tr td:first-child{
+            padding: 10px;
+            text-align: right;
+        }
+        .swipe{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            color: white;
+            align-items: center;
+          
+        }
+        .arrow{
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            background-color: green;
+            padding: 10px;
+            border-radius: 50px;
+            text-align: center;
+            margin-left: 5px;
+            margin-right: 5px;
+            align-items: center;
+            box-shadow: 2px 2px 2px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="reg" align="center">
+    <form action="1" method="post">
+        <fieldset>
+            <legend>
+                Registration Details 
+                </legend>
+                <table align="center">
+                    <tr>
+                        <td>
+                            <label for="uni">University:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="uni" id="uni" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="institute">Institute:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="institute" id="institute" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="branch">Branch:</label>
+                        </td>
+                        <td>
+                            <select name="branch" id="branch">
+                                <option value="civil">CIVIL</option>
+                                <option value="it">IT</option>
+                                <option value="mech">MECHANICAL</option>
+                                <option value="Comp">COMPUTER</option>
+                            </select>
+                        </td>
+                        <tr>
+                        <td>
+                            <label for="degree">Degree:</label>
+                        </td>
+                        <td>
+                            <select name="degree" id="degree">
+                                <option value="be">BE</option>
+                                <option value="btech">BTECH</option>
+                                <option value="Bcs">Bcs</option>
+                            </select>
+                            <input type="radio" name="status" id="pursuing" required/><label for="status">pursuing</label>
+                            <input type="radio" name="status" id="completed" required/><label for="completed">completed</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="cpi">Average CPI:</label>
+                        </td>
+                        <td>
+                            <input type="number" name="cpi" id="cpi" required min="1.0" max="10.0"/>
+                            <label for="sem">Upto:</label>
+                            <input type="number" name="sem" id="sem" required min="1.0" max="7.0"/> Th Semister
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>
+                        <label for="exp">Experiance:</label>
+                    </td>
+                    <td>
+                        <input type="number" name="exp" id="exp" required"/> years                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <label for="url">Your website or blog:</label>
+                        </td>
+                        <td>
+                            <input type="url" name="url" id="url"/>
+                        </td>
+                    </tr>
+
+                </table>
+        </fieldset>
+    </form>
+        <div class="swipe">
+            <div class="arrow"><</div>
+            <div>Step 2</div>
+            <div class="arrow">></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .ssn {
+        display: flex;
+        justify-content: center;
+        color: white;
+        border-radius: 25px;
+        border-color: blue;
+        border-width: 4px;
+        margin: 10px;
+        width: 40%;
+      }
+      .uname {
+        color: white;
+        border-radius: 25px;
+        border-color: blue;
+        border-width: 4px;
+        margin: 10px;
+        width: 20%;
+      }
+      legend {
+        background-color: blue;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      table tr td:first-child {
+        padding: 10px;
+        text-align: right;
+      }
+      #istr {
+        border-radius: 5px;
+        padding: 5px;
+        background-color: blue;
+      }
+      input {
+        background-color: black;
+      }
+      #submit {
+        background-color: blue;
+        color: white;
+        width: 75px;
+        height: 25px;
+        border-radius: 5px;
+        margin-left: 75px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="1" method="post">
+      <fieldset class="ssn">
+        <legend>Name and Address</legend>
+        <table>
+          <tr>
+            <td>
+              <label for="ssn">SSN:</label>
+            </td>
+            <td>
+              <input type="text" name="ssn" id="ssn" required />
+              <label id="istr">Fill in name and address</label><br />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="Name">Full name:</label>
+            </td>
+            <td><input type="text" name="name" id="name" required /><br /></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="street">Street and number:</label>
+            </td>
+            <td>
+              <input type="text" name="street" id="street" required /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="zipcode">Postal code:</label>
+            </td>
+            <td>
+              <input type="number" name="zipcode" id="zipcode" required /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="city">City:</label>
+            </td>
+            <td>
+              <input type="text" name="city" id="city" required />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <fieldset class="uname">
+        <legend>Username and password</legend>
+        <table>
+          <tr>
+            <td>
+              <label for="Username">Username:</label>
+            </td>
+            <td>
+              <input type="text" name="Username" id="Username" required /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="password">password:</label>
+            </td>
+            <td>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                required
+              /><br />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <button type="Submit" value="submit" name="submit" id="submit">
+        Register
+      </button>
+    </form>
+  </body>
+</html>

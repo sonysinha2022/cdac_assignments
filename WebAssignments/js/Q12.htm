@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="bootstrap-4.6.2-dist/JQuery.js"></script>
+    <script src="bootstrap-4.6.2-dist/css/bootstrap.css"></script>
+    <script src="bootstrap-4.6.2-dist/js/bootstrap.js"></script>
+    <script>
+        let loadfile = () => {
+            var jqxhr = $.ajax({
+                url: "https://jsonplaceholder.typicode.com/posts",
+                method: "get",
+                success: function (response) {
+                    var str = "<table border='2'><tr><th>Id</th><th>userId</th><th>title</th><th>body</th></tr>"
+                    for (var ob of response) {
+                        str += `<tr><td>${ob.id}</td><td>${ob.userId}</td><td>${ob.title}</td><td>${ob.body}</td></tr>`
+                    }
+                    str += "</table>";
+                    $("#div1").html(JSON.stringify(response))
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <button onclick="loadfile()">loadfile</button>
+</body>
+
+</html>
