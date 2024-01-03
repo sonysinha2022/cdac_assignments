@@ -1,0 +1,14 @@
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\bin\Debug\net7.0\HRAPP.exe
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\bin\Debug\net7.0\HRAPP.deps.json
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\bin\Debug\net7.0\HRAPP.runtimeconfig.json
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\bin\Debug\net7.0\HRAPP.dll
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\bin\Debug\net7.0\HRAPP.pdb
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\obj\Debug\net7.0\HRAPP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\obj\Debug\net7.0\HRAPP.AssemblyInfoInputs.cache
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\obj\Debug\net7.0\HRAPP.AssemblyInfo.cs
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\obj\Debug\net7.0\HRAPP.csproj.CoreCompileInputs.cache
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\obj\Debug\net7.0\HRAPP.dll
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\obj\Debug\net7.0\refint\HRAPP.dll
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\obj\Debug\net7.0\HRAPP.pdb
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\obj\Debug\net7.0\HRAPP.genruntimeconfig.cache
+C:\Users\dac\Downloads\Day4\HRSolution\HRAPP\obj\Debug\net7.0\ref\HRAPP.dll
