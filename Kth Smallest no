@@ -1,0 +1,48 @@
+package interviewcodesprac;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SA 
+{ public static int kthsmallestno(String arrstring, int k)
+	{ String []arr1 =arrstring.split(" ");
+	
+	 int[] intarray= new int[arr1.length];
+	 for(int i=0;i<arr1.length;i++)
+	 { intarray[i]= Integer.parseInt(arr1[i]);}
+	 
+	 Arrays.sort(intarray);
+	 
+	 int s= intarray[k-1];
+	 return s;}
+
+public static int kthLargestNo(String arrstring, int k) {
+	String []arr = arrstring.split(" ");
+	int[] intarr= new int[arr.length];
+	
+  for(int i=0;i<arr.length;i++)
+  {intarr[i]=Integer.parseInt(arr[i]);}
+	
+	Arrays.sort(intarr);
+	int s1 =intarr[intarr.length-k];
+	return s1;}
+
+
+public static void main(String [] args)
+{ Scanner sc =new Scanner(System.in);
+System.out.println(" enter string seperaed by no:");
+  String input= sc.nextLine();
+  
+  
+  System.out.println("Enter the value of k:");
+  int k = sc.nextInt();
+  
+  int kthSmallest = kthsmallestno(input, k);
+  System.out.println("The " + k + "th smallest number is: " + kthSmallest);
+  
+  int kthLargest =kthLargestNo(input, k);
+  System.out.println("The " + k + "th smallest number is: " + kthLargest);
+  
+  
+ }
+}
