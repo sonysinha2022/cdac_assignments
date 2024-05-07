@@ -1,0 +1,181 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SA 
+{ public static int kthsmallestno(String arrstring, int k)
+	{ String []arr1 =arrstring.split(" ");
+
+	 int[] intarray= new int[arr1.length];
+	 for(int i=0;i<arr1.length;i++)
+	 { intarray[i]= Integer.parseInt(arr1[i]);}
+
+	 Arrays.sort(intarray);
+
+	 int s= intarray[k-1];
+	 return s;}
+
+public static int kthLargestNo(String arrstring, int k) {
+	String []arr = arrstring.split(" ");
+	int[] intarr= new int[arr.length];
+
+  for(int i=0;i<arr.length;i++)
+  {intarr[i]=Integer.parseInt(arr[i]);}
+
+	Arrays.sort(intarr);
+	int s1 =intarr[intarr.length-k];
+	return s1;}
+
+
+public static void main(String [] args)
+{ Scanner sc =new Scanner(System.in);
+System.out.println(" enter string seperaed by no:");
+  String input= sc.nextLine();
+
+
+  System.out.println("Enter the value of k:");
+  int k = sc.nextInt();
+
+  int kthSmallest = kthsmallestno(input, k);
+  System.out.println("The " + k + "th smallest number is: " + kthSmallest);
+
+  int kthLargest =kthLargestNo(input, k);
+  System.out.println("The " + k + "th smallest number is: " + kthLargest);
+
+
+ }
+}
+=====================================
+
+
+public class Palindrome
+{
+	public static void main(String [] args)
+	{ Scanner sc=new Scanner(System.in);
+	System.out.println("enter string");
+	  String input=sc.nextLine();
+	  String ss=palindromic(input);
+	  System.out.println("pallim:  "+ss);
+		
+	}
+	
+	
+	public static int spreadacrosscenter(String s, int l, int r)
+	{
+	while(l>=0  &&  r <s.length() && s.charAt(l)==s.charAt(r))
+		{l--;r++;} return r-l-1;
+	}
+	
+	public static String palindromic(String s) {
+		if(s==null || s.length()<1) return "--";
+		
+		int start=0, end=0;
+		for(int i=0; i<s.length();i++)
+		{
+			int len1=spreadacrosscenter(s,i,i);
+			int len2=spreadacrosscenter(s,i,i+1);
+			int len=Math.max(len1, len2);
+		if(len >end-start)
+		{  start= i-(len-1)/2;
+		 end= i+len/2;}
+		}
+		return s.substring(start,end+1);	
+	}
+}
+
+================================================
+
+import java.util.Scanner;
+
+public class ReverseNumber {
+	public static void main(String [] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println(" enter the no");
+		int n=sc.nextInt();
+		float rev=0;
+		 while(n!=0)
+		 {
+			 rev=rev*10;
+			 rev=rev+n%10;
+			 n=n/10;
+		 }
+		System.out.println("rev"+rev);
+}}
+
+=========================================
+import java.util.Scanner;
+
+public class REVERSEstring
+{
+	public static void main(String[] args)
+	{ Scanner sc= new Scanner(System.in);
+	System.out.println("enter String: ");
+	 String ss= sc.nextLine();
+	 String rev=reverse(ss);
+	 System.out.println("rev:"+rev);}
+	
+	public static String reverse(String s)
+	{ String[] qs= s.split("");
+	StringBuilder sb=new StringBuilder();
+	for(int i=s.length()-1;i>=0;i--)
+	{ sb.append(qs[i]);}
+	return sb.toString();
+	}}
+=========================================
+
+public class countofoccurence{
+	public static void main(String [] args)
+	{ System.out.println("enter string");
+	Scanner sc= new Scanner(System.in);
+	String str=sc.nextLine();
+	Map<Character,Integer> lettercount= countLetters(str);
+	for(Map.Entry<Character,Integer> entry: lettercount.entrySet())
+	{System.out.println(entry.getKey()+":"+entry.getValue());}
+	 
+	}
+	
+	public static Map<Character, Integer> countLetters(String input)
+	{ Map<Character, Integer> lettercount= new HashMap<>();
+
+// ADD THIS TO COUNT IRRESPECTIVE OF CASE
+// ss = ss.toLowerCase();
+
+	  for(char ch: input.toCharArray())
+	  { if(Character.isLetter(ch))
+	  {ch=Character.toLowerCase(ch);
+	  lettercount.put(ch, lettercount.getOrDefault(ch,0)+1);
+	  }} return lettercount; 
+		  
+	  }	
+}
+
+enter string
+Abcfacd
+A 1
+a 1
+b 1
+c 2
+d 1
+f 1
+===================================
+public class FibnocciSeries
+{
+	public static void main(String[] args)
+	{
+		Scanner sc =new Scanner(System.in);
+		int a=0; int b=1;
+		int limit= sc.nextInt();
+		
+		System.out.print(a+" " +b+ " ");
+		
+		while(true)
+		{int next =a+b;
+		 if(limit<next)break;
+		 System.out.print(next+ " ");
+		 a=b;
+		 b=next;
+			
+		}}
+}
+=============================================
+
