@@ -1,0 +1,44 @@
+public class Strings {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the string of numbers separated by space
+        System.out.println("Enter the numbers separated by space:");
+        String input = scanner.nextLine();
+
+        // Split the input string into an array of strings
+        String[] numbersAsString = input.split(" ");
+
+        // Convert the array of strings to an array of integers
+        int[] numbers = new int[numbersAsString.length];
+        StringBuilder numbersStringBuilder = new StringBuilder(); // StringBuilder to build the output string
+        for (int i = 0; i < numbersAsString.length; i++) {
+            numbers[i] = Integer.parseInt(numbersAsString[i]);
+            numbersStringBuilder.append(numbers[i]); // Append each number to the StringBuilder
+            if (i < numbersAsString.length - 1) {
+                numbersStringBuilder.append(", "); // Add comma and space for separation, except for the last number
+            }
+        }
+
+        // Print the array of integers
+        System.out.println("The array of numbers is: " + numbersStringBuilder.toString());
+
+        scanner.close();
+    }
+}
+==================
+
+public class StringContainsVowels {
+
+	public static void main(String[] args) {
+		System.out.println(stringContainsVowels("Hello")); // true
+		System.out.println(stringContainsVowels("TV")); // false
+	}
+
+	public static boolean stringContainsVowels(String input) {
+		return input.toLowerCase().matches(".*[aeiou].*");
+	}
+
+}
+
+================
